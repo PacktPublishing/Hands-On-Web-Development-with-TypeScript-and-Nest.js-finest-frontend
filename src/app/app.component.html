@@ -1,9 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <br>
-  <app-info-dashboard></app-info-dashboard>
+  <nav></nav>
 
-<router-outlet></router-outlet>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FiNest Financials</a>
+    <div class="navbar-collapse collapse show" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/info" routerLinkActive="active"
+            >Company Information</a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLink="/news" routerLinkActive="active">Company News</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/stock" routerLinkActive="active"
+            >Company Stock Prices</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br />
+  <router-outlet></router-outlet>
+</div>

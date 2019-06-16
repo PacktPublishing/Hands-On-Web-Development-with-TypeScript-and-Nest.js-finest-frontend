@@ -1,0 +1,37 @@
+<main>
+    <article>
+      <div class="container">
+        <div class="row">
+          <h2 class="alert alert-dismissible alert-danger col-md-9 mx-auto">
+            Get Company Stock Data
+          </h2>
+        </div>
+      </div>
+      <form (submit)="onSubmit()">
+        <fieldset>
+          <div class="form-group-row">
+            <input
+              class="form-control col-md-3 text-center mx-auto"
+              [(ngModel)]="cSymbol"
+              name="symbol"
+              type="text"
+              placeholder="Enter Company Symbol"
+            />
+          </div>
+        </fieldset>
+      </form>
+
+      <br />
+      <br />
+
+      <div *ngIf="companyStock">
+        <div class="card border-danger mb-3 mx-auto" style="max-width: 20rem;">
+          <div class="card-header">Latest Company Stock</div>
+          <div class="card-body">
+            <h4 class="card-title">{{ cSymbol }}</h4>
+            <p class="card-text">{{ companyStock }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
