@@ -1,0 +1,19 @@
+<main>
+  <article>
+    <h2>Get Company Information</h2>
+    <form (submit)="onSubmit()">
+      <input
+        [(ngModel)]="cSymbol"
+        name="symbol"
+        type="text"
+        placeholder="Enter Company Symbol"
+      />
+    </form>
+
+    <div>
+      <p>
+        {{ companyInfo }}
+      </p>
+      </div>
+  </article>
+</main>
