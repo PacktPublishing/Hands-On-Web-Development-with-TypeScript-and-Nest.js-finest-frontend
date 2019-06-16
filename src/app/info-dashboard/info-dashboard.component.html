@@ -1,19 +1,37 @@
 <main>
   <article>
-    <h2>Get Company Information</h2>
+    <div class="container">
+      <div class="row">
+        <h2 class="alert alert-dismissible alert-success col-md-9 mx-auto">
+          Get Company Information
+        </h2>
+      </div>
+    </div>
     <form (submit)="onSubmit()">
-      <input
-        [(ngModel)]="cSymbol"
-        name="symbol"
-        type="text"
-        placeholder="Enter Company Symbol"
-      />
+      <fieldset>
+        <div class="form-group-row">
+          <input
+            class="form-control col-md-3 text-center mx-auto"
+            [(ngModel)]="cSymbol"
+            name="symbol"
+            type="text"
+            placeholder="Enter Company Symbol"
+          />
+        </div>
+      </fieldset>
     </form>
 
-    <div>
-      <p>
-        {{ companyInfo }}
-      </p>
+    <br />
+    <br />
+
+    <div *ngIf="companyInfo">
+      <div class="card border-success mb-3 mx-auto" style="max-width: 20rem;">
+        <div class="card-header">Latest Company Data</div>
+        <div class="card-body">
+          <h4 class="card-title">{{ cSymbol }}</h4>
+          <p class="card-text">{{ companyInfo }}</p>
+        </div>
       </div>
+    </div>
   </article>
 </main>
