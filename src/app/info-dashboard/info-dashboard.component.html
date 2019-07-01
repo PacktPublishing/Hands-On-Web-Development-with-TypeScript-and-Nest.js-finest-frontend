@@ -25,11 +25,37 @@
     <br />
 
     <div *ngIf="companyInfo">
-      <div class="card border-success mb-3 mx-auto" style="max-width: 20rem;">
+      <div class="card border-success mb-3 mx-auto" style="max-width: 80rem;">
         <div class="card-header">Latest Company Data</div>
         <div class="card-body">
-          <h4 class="card-title">{{ cSymbol }}</h4>
-          <p class="card-text">{{ companyInfo }}</p>
+          <h4 class="card-title">{{ companyInfo[1][1] }}</h4>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-success" *ngFor="let info of companyInfo">
+                <th scope="row">
+                  <span class="text-capitalize">{{ info[0] }}</span>
+                </th>
+                <td>
+                  <p class="text-justify">
+                    {{ info[1] }}
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="noData && !companyInfo">
+      <div class="card border-danger mb-3 mx-auto" style="max-width: 40rem;">
+        <div class="card-body">
+          <h4 class="card-title">No data Found for this Symbol.</h4>
         </div>
       </div>
     </div>

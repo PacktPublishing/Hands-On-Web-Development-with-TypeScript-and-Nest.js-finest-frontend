@@ -8,6 +8,7 @@ import { InfoDashboardComponent } from './info-dashboard/info-dashboard.componen
 import { NewsDashboardComponent } from './news-dashboard/news-dashboard.component';
 import { StockDashboardComponent } from './stock-dashboard/stock-dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

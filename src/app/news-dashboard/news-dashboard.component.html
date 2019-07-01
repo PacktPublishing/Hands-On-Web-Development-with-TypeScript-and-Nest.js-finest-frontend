@@ -1,37 +1,72 @@
 <main>
-    <article>
-      <div class="container">
-        <div class="row">
-          <h2 class="alert alert-dismissible alert-primary col-md-9 mx-auto">
-            Get Company News
-          </h2>
+  <article>
+    <div class="container">
+      <div class="row">
+        <h2 class="alert alert-dismissible alert-primary col-md-9 mx-auto">
+          Get Company News
+        </h2>
+      </div>
+    </div>
+    <form (submit)="onSubmit()">
+      <fieldset>
+        <div class="form-group-row">
+          <input
+            class="form-control col-md-3 text-center mx-auto"
+            [(ngModel)]="cSymbol"
+            name="symbol"
+            type="text"
+            placeholder="Enter Company Symbol"
+          />
+        </div>
+      </fieldset>
+    </form>
+
+    <br />
+    <br />
+
+    <div *ngIf="companyNews">
+      <div class="card border-primary mb-3 mx-auto" style="max-width: 80rem;">
+        <div class="card-header">Latest Company News</div>
+        <div class="card-body">
+          <h4 class="card-title">{{ cSymbol | uppercase }}</h4>
+          <table class="table table-hover">
+            <tbody>
+              <tr
+                class="table-primary text-justify"
+                *ngFor="let news of companyNews"
+              >
+                <th scope="row">
+                  <a href="{{ news.url }}">
+                    <img
+                      src="{{ news.image }}"
+                      alt=""
+                      width="400"
+                      height="200"
+                    />
+                  </a>
+                </th>
+                <td>
+                  <p>{{ news.datetime }}</p>
+                  <a href="{{ news.url }}">
+                    <h3 class="text-center">
+                      {{ news.headline }}
+                    </h3>
+                  </a>
+                  <p><b>Summary</b>: {{ news.summary }}</p>
+                  <p><b>Source</b>: {{ news.source }}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <form (submit)="onSubmit()">
-        <fieldset>
-          <div class="form-group-row">
-            <input
-              class="form-control col-md-3 text-center mx-auto"
-              [(ngModel)]="cSymbol"
-              name="symbol"
-              type="text"
-              placeholder="Enter Company Symbol"
-            />
-          </div>
-        </fieldset>
-      </form>
-
-      <br />
-      <br />
-
-      <div *ngIf="companyNews">
-        <div class="card border-primary mb-3 mx-auto" style="max-width: 20rem;">
-          <div class="card-header">Latest Company News</div>
-          <div class="card-body">
-            <h4 class="card-title">{{ cSymbol }}</h4>
-            <p class="card-text">{{ companyNews }}</p>
-          </div>
+    </div>
+    <div *ngIf="noData && !companyNews">
+      <div class="card border-danger mb-3 mx-auto" style="max-width: 40rem;">
+        <div class="card-body">
+          <h4 class="card-title">No news Found for this Symbol.</h4>
         </div>
       </div>
-    </article>
-  </main>
+    </div>
+  </article>
+</main>
