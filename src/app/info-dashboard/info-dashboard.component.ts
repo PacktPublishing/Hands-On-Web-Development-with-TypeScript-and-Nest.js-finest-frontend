@@ -24,7 +24,8 @@ export class InfoDashboardComponent implements OnInit {
     this.noData = false;
 
     try {
-      this.companyInfo = Object.entries(await this.dashboardService.getInfo(this.cSymbol));
+      const cInfo = await this.dashboardService.getInfo(this.cSymbol);
+      this.companyInfo = Object.entries(cInfo);
     } catch {
       this.noData = true;
     }
