@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()">
+  <fieldset class="mb-3 mx-auto" style="max-width: 40rem;">
+    <legend>Sign In</legend>
+    <div class="form-group">
+      <input
+        name="email"
+        [(ngModel)]="email"
+        type="email"
+        class="form-control"
+        id="useremail"
+        placeholder="Enter email"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        name="password"
+        [(ngModel)]="password"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Enter password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </fieldset>
+</form>

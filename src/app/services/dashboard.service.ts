@@ -6,9 +6,9 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class DashboardService {
-  infoUrl = `${environment.SERVER_URL}/info`;
-  newsUrl = `${environment.SERVER_URL}/news`;
-  stockUrl = `${environment.SERVER_URL}/stock`;
+  infoUrl = `${environment.SERVER_URL}/finest/v1/info`;
+  newsUrl = `${environment.SERVER_URL}/finest/v1/news`;
+  stockUrl = `${environment.SERVER_URL}/finest/v1/stock`;
 
   constructor(private readonly httpClient: HttpClient) { }
 

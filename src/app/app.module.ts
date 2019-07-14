@@ -9,6 +9,8 @@ import { NewsDashboardComponent } from './news-dashboard/news-dashboard.componen
 import { StockDashboardComponent } from './stock-dashboard/stock-dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     InfoDashboardComponent,
     NewsDashboardComponent,
     StockDashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

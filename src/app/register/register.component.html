@@ -1,0 +1,52 @@
+<form (ngSubmit)="onSubmit()">
+  <fieldset class="mb-3 mx-auto" style="max-width: 40rem;">
+    <legend>Sign up</legend>
+    <div class="form-group">
+      <input
+        name="username"
+        [(ngModel)]="username"
+        type="input"
+        class="form-control"
+        id="username"
+        aria-describedby="username"
+        placeholder="Enter name"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        name="email"
+        [(ngModel)]="email"
+        type="email"
+        class="form-control"
+        id="useremail"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <input
+        name="password"
+        [(ngModel)]="password"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Enter password"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        name="avatar"
+        [(ngModel)]="avatar"
+        type="input"
+        class="form-control"
+        id="avatar"
+        aria-describedby="avatar"
+        placeholder="Enter avatar link"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </fieldset>
+</form>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  SERVER_URL: 'http://127.0.0.1:3210/finest/v1'
+  SERVER_URL: 'http://127.0.0.1:3210'
 };
 
 /*
