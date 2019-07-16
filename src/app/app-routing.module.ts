@@ -10,7 +10,7 @@ import { LoginGuard } from './auth/login.guard';
 import { RegisterGuard } from './auth/register.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [RegisterGuard] },
   {
     path: 'register', component: RegisterComponent, canActivate: [RegisterGuard]
   },
