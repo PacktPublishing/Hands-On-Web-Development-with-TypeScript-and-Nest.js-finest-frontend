@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm install express && ng build — aot — prod"
+    "postinstall": "npm install express && ng build  --aot --prod"
   },
   "private": true,
   "dependencies": {
