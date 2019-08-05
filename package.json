@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "rm -rf ./dist || rimraf dist && ng build",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm install express && ng build --aot --prod"
+    "postinstall": "npm install express && rimraf dist && ng build --prod"
   },
   "private": true,
   "dependencies": {
