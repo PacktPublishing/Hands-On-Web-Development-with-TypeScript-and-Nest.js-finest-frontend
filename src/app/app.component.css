@@ -1,0 +1,11 @@
+.nav-link {
+  display: block;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 0.5em;
+}
+
+.nav-link:hover {
+  background: white;
+  color: black;
+}

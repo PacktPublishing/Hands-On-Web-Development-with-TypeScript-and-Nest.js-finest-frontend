@@ -8,8 +8,8 @@ import { DashboardService } from '../services/dashboard.service';
 })
 export class NewsDashboardComponent implements OnInit {
   @Input() cSymbol: string;
-  protected companyNews;
-  protected noData: boolean;
+  public companyNews;
+  public noData: boolean;
 
 
   constructor(
