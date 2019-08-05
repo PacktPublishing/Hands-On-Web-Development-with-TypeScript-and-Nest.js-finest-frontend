@@ -25,7 +25,9 @@ export class StockDashboardComponent implements OnInit {
     this.noData = false;
 
     try {
-      this.companyStock = JSON.stringify(await this.dashboardService.getStock(this.cSymbol));
+
+      const [result] = await this.dashboardService.getStock(this.cSymbol) as any;
+      this.companyStock = result.price;
     } catch {
       this.noData = true;
     }
