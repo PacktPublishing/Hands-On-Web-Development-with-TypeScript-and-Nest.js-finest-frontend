@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm install express && rimraf dist && ng build --prod"
+    "postinstall": "npm install express && rimraf dist && ng build --configuration=production --aot --prod"
   },
   "private": true,
   "dependencies": {
